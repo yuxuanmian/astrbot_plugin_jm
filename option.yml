@@ -10,6 +10,7 @@ client:
   # 可配置特定域名，如下：
   # 程序会先用第一个域名，如果第一个域名重试n次失败，则换下一个域名重试，以此类推。
   domain:
+    - 18comic.vip
     - 18comic-uc.vip
     - 18comic-mhws.vip
     - 18comic-uc.cc
@@ -62,7 +63,7 @@ dir_rule:
   # base_dir: 根目录。
   # 此配置也支持引用环境变量，例如
   # base_dir: ${JM_DIR}/下载文件夹/
-  base_dir: ./data/plugins/FateTrial_jmdownloader/picture
+  base_dir: ./data/plugins/astrbot_plugin_jm/picture
 plugins:
   after_album:
     # 把章节的所有图片合并为一个pdf的插件
@@ -73,5 +74,5 @@ plugins:
     # 配置到after_album时，需要修改filename_rule参数，不能写Pxx只能写Axx示例如下
     - plugin: img2pdf
       kwargs:
-        pdf_dir: ./data/plugins/FateTrial_jmdownloader/pdf # pdf存放文件夹
+        pdf_dir: ./data/plugins/astrbot_plugin_jm/pdf # pdf存放文件夹
         filename_rule: Aid # pdf命名规则，A代表album, name代表使用album.name也就是本子名称
