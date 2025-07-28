@@ -52,6 +52,9 @@ class JMPlugin(Star):
         tokens = parts[1]
         pdf_path = f"{path}/pdf/{tokens}.pdf"
 
+
+        event.plain_result(f"debug:{pdf_path}\n{path}")
+
         # 检查文件是否已存在
         if os.path.exists(pdf_path):
             yield event.plain_result(f"本子 {tokens} 已存在，直接发送")
