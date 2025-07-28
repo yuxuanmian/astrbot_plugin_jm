@@ -21,18 +21,19 @@ class JMPlugin(Star):
 
     # 将同步下载任务包装成异步函数
     async def download_comic_async(self, album_id, option):
-        if album_id in self.downloading:
-            return False, "该本子正在下载中，请稍后再试"
-
-        self.downloading.add(album_id)
-        try:
-            # 将同步下载操作放到线程池中执行，避免阻塞事件循环
-            await asyncio.to_thread(jmcomic.download_album, album_id, option)
-            return True, None
-        except Exception as e:
-            return False, f"下载出错: {str(e)}"
-        finally:
-            self.downloading.discard(album_id)
+        return
+        # if album_id in self.downloading:
+        #     return False, "该本子正在下载中，请稍后再试"
+        #
+        # self.downloading.add(album_id)
+        # try:
+        #     # 将同步下载操作放到线程池中执行，避免阻塞事件循环
+        #     await asyncio.to_thread(jmcomic.download_album, album_id, option)
+        #     return True, None
+        # except Exception as e:
+        #     return False, f"下载出错: {str(e)}"
+        # finally:
+        #     self.downloading.discard(album_id)
 
     # 注册指令的装饰器。指令名为 JM下载。注册成功后，发送 `/JM下载` 就会触发这个指令
     @filter.command("jm下载")
