@@ -53,8 +53,8 @@ class JMPlugin(Star):
         pdf_path = f"{path}/pdf/{tokens}.pdf"
 
 
-        event.plain_result(f"pdf_path:{pdf_path}")
-        event.plain_result(f"path:{path}")
+        # event.plain_result(f"pdf_path:{pdf_path}")
+        # event.plain_result(f"path:{path}")
 
         # 检查文件是否已存在
         if os.path.exists(pdf_path):
