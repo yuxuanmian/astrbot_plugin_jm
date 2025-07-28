@@ -51,6 +51,7 @@ class JMPlugin(Star):
 
         tokens = parts[1]
         pdf_path = f"{path}/pdf/{tokens}.pdf"
+        os.path.dirname(f"{path}/pdf")
 
 
         yield event.plain_result(f"pdf_path:{pdf_path}")
